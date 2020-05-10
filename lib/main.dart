@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:drawer/widgets/custom_drawer_tile.dart';
+
 void main() => runApp(DrawerApp());
 
 class DrawerApp extends StatelessWidget {
@@ -22,34 +24,13 @@ class DrawerApp extends StatelessWidget {
                 ),
                 child: Text('Some header'),
               ),
-              CustomDrawerTile(),
-              CustomDrawerTile(),
-              CustomDrawerTile(),
-              CustomDrawerTile(),
+              CustomDrawerTile(Icons.person, 'Profile', Icons.arrow_right),
+              CustomDrawerTile(Icons.settings, 'Settings', Icons.arrow_right),
+              CustomDrawerTile(Icons.notifications, 'Notifications', Icons.arrow_right),
+              CustomDrawerTile(Icons.lock, 'Logout', Icons.arrow_right),
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class CustomDrawerTile extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () => {},
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Row(
-            children: <Widget>[
-              Icon(Icons.person),
-              Text('Profile'),
-            ],
-          ),
-          Icon(Icons.arrow_right),
-        ],
       ),
     );
   }
